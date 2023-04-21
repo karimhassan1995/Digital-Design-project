@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Digital_Design.Controllers
 {
+
     public class ToDoesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -86,6 +87,8 @@ namespace Digital_Design.Controllers
                 return NotFound();
             }
             ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id", toDo.AppUserId);
+            ViewData["todo-id"] = id;
+            ViewData["userid"] = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View(toDo);
         }
 
@@ -94,7 +97,7 @@ namespace Digital_Design.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ToDoTitle,ToDoDescription,AppUserId")] ToDo toDo)
+        public async Task<IActionResult> Edit(int id, [Bind("ToDoId,ToDoTitle,ToDoDescription,AppUserId")] ToDo toDo)
         {
             if (id != toDo.ToDoId)
             {
