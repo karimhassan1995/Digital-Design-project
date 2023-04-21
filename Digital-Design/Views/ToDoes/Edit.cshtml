@@ -9,34 +9,36 @@
 <h4>ToDo</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-4" >
+        <form asp-action="Edit" class="forma">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ToDoId" />
-            <div class="form-group">
-                <label asp-for="ToDoTitle" class="control-label"></label>
-                <input asp-for="ToDoTitle" class="form-control" />
-                <span asp-validation-for="ToDoTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToDoDescription" class="control-label"></label>
-                <input asp-for="ToDoDescription" class="form-control" />
-                <span asp-validation-for="ToDoDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AppUserId" class="control-label"></label>
-                <select asp-for="AppUserId" class="form-control" asp-items="ViewBag.AppUserId"></select>
-                <span asp-validation-for="AppUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="formt">
+                <div class="form-group">
+                    <input type="hidden" asp-for="ToDoId" value='@ViewData["todo-id"]' />
+                </div>
+                <div class="form-group">
+                    <label style="color:white;" asp-for="ToDoTitle" class="control-label"></label>
+                    <input asp-for="ToDoTitle" class="form-control styleofinputs1" />
+                    <span asp-validation-for="ToDoTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color:white;"  asp-for="ToDoDescription" class="control-label"></label>
+                    <input asp-for="ToDoDescription" class="form-control styleofinputs1" />
+                    <span asp-validation-for="ToDoDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="AppUserId" class="form-control" value='@ViewData["userid"]' type="hidden" />
+                </div>
+                <div class="form-group">
+                    <input type="submit"  value="Save" class="btn btn-primary btn11" />
+                </div>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-dark ht" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

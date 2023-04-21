@@ -66,3 +66,32 @@ body {
 .body {
     background-image: /Image/pexels-mart-production-7718678.jpg;
 }
+
+.formt{
+    background-color: black;
+    width: 400px;
+}
+
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.styleofinputs1 {
+    width: 330px;
+    margin-left: 10px;
+}
+
+.btn11{
+    margin-top: 10px ;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}
+
+.ht{
+    margin-top: 20px;
+}
