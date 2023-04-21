@@ -16,3 +16,53 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.formc{
+    background-color:black;
+    width: 400px;
+}
+
+.styleofinputs{
+    width: 330px;
+}
+
+.btnsubmit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homecolumn{
+    display:flex;
+    
+}
+
+.blackbtn{
+    margin-left: 300px;
+    margin-top: 300px;
+    
+}
+
+.blackbtn1{
+    padding: 20px;
+    font-size: 15px;
+}
+
+.x{
+    display: flex;
+   
+}
+
+.createimg{
+    margin-left: 300px;
+}
+
+.body {
+    background-image: /Image/pexels-mart-production-7718678.jpg;
+}
