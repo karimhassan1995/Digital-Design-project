@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Digital_Design.Data;
 using Digital_Design.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Digital_Design.Controllers
 {
@@ -49,6 +51,7 @@ namespace Digital_Design.Controllers
         public IActionResult Create()
         {
             ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["userid"] = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
 
